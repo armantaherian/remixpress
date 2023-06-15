@@ -17,7 +17,7 @@ export default function Taxonomies({ data, ChipProps }: TaxonomiesProps) {
           label={name}
           size="small"
           {...ChipProps}
-          sx={{ mr: 0.5, ...ChipProps?.sx }}
+          sx={{ marginInlineEnd: 0.5, ...ChipProps?.sx }}
         />
       ))}
     </>

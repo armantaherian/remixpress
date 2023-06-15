@@ -28,7 +28,7 @@ export const meta: MetaFunction = ({ data }: { data: Node }) => {
 
   const description = data?.excerpt?.replace(/<[^>]*>?/gm, "");
   const twitter = settings.configs?.twitter;
-  const author = `${data.author?.node.firstName} ${data.author?.node.lastName}`;
+  const author = `${data.author?.node.firstName ?? ""} ${data.author?.node.lastName ?? ""}`;
   const title = `${data.title} - ${author}`;
   const image = data.featuredImage?.node?.mediaDetails?.sizes?.find(
     ({ width }) => Number(width) > 300 && Number(width) < 800
@@ -76,6 +76,7 @@ export default function NodeUri() {
     date,
     commentStatus,
     featuredImage,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     uri,
   } = useLoaderData<Node>();
 
@@ -94,11 +95,11 @@ export default function NodeUri() {
             pb: 5,
           }}
         >
-          <Avatar sx={{ mr: 1 }} src={author.node.avatar?.url} />
+          <Avatar sx={{ marginInlineEnd: 1 }} src={author.node.avatar?.url} />
           <Typography variant="caption">
             {author.node.firstName} {author?.node.lastName} /
           </Typography>
-          <Date sx={{ ml: 0.5 }} date={date} />
+          <Date sx={{ marginInlineStart: 0.5 }} date={date} />
         </Box>
       )}
       {featuredImage?.node.mediaItemUrl && (

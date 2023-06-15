@@ -47,6 +47,7 @@ export default function Logo({
       to={"/"}
       prefetch="intent"
       color="text.primary"
+      textAlign="center"
       sx={{
         textDecoration: "none",
         ...rest?.sx,
@@ -61,11 +62,12 @@ export default function Logo({
         }}
         variant="h5"
       >
-        {settings.configs?.siteTitle}
+        {settings.configs?.siteTitle || settings.common?.generalSettingsTitle}
       </Typography>
+
       {!hideDescription && (
         <Typography sx={{ fontWeight: "light" }} variant="caption">
-          {settings.configs?.secondaryTitle}
+          {settings.configs?.secondaryTitle || settings.common?.generalSettingsDescription}
         </Typography>
       )}
     </Link>

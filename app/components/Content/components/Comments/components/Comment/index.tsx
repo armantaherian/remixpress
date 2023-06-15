@@ -16,7 +16,7 @@ export default function Comment({ date, author, children, sx }: CommentProps) {
             alignItems: "center",
           }}
         >
-          <Typography sx={{ p: 0, mr: 1 }} variant="h6">
+          <Typography sx={{ p: 0, marginInlineEnd: 1 }} variant="h6">
             {authorName}
           </Typography>
           <Date date={date} format="MMM DD, YYYY" />

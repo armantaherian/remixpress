@@ -33,6 +33,10 @@ export function links() {
       href: "https://fonts.googleapis.com/css2?family=PT+Serif:wght@700&family=Poppins:wght@400;700&display=swap",
     },
     {
+      rel: "stylesheet",
+      href: "https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css",
+    },
+    {
       rel: "alternate",
       type: "application/rss+xml",
       href: "https://blog.ahandani.com/feed/",
@@ -67,6 +71,7 @@ export const meta: MetaFunction = () => {
     "og:image": socialMediaImage,
   };
 };
+
 const Document = withEmotionCache(
   ({ children, title }: DocumentProps, emotionCache) => {
     const clientStyleData = useContext(ClientStyleContext);
@@ -97,7 +102,7 @@ const Document = withEmotionCache(
     }, []);
 
     return (
-      <html lang="en">
+      <html lang="en" dir="rtl">
         <head>
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -110,6 +115,7 @@ const Document = withEmotionCache(
             content="emotion-insertion-point"
           />
         </head>
+
         <body>
           {children}
           <ScrollRestoration />
@@ -184,7 +190,7 @@ export function ErrorBoundary({ error }: { error: Error }) {
       <Layout>
         <div>
           <h1>There was an error</h1>
-          <p>{error.message}</p>
+          <code>{error.message}</code>
         </div>
       </Layout>
     </Document>

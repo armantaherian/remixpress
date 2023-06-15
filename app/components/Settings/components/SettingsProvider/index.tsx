@@ -28,7 +28,7 @@ function SettingsProvider(props: SettingsProviderProps) {
   const ga = useRef<AnalyticsInstance>();
 
   const analytics = useMemo(() => {
-    if (!ga.current) {
+    if (!ga.current && googleTagManagerId) {
       ga.current = Analytics({
         plugins: [
           googleTagManager({
@@ -48,6 +48,7 @@ function SettingsProvider(props: SettingsProviderProps) {
       menus: keyBy(settings?.menus.nodes, "slug"),
       state: settingsState,
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [settings, settingsState]);
 
   return (

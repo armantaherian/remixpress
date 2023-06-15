@@ -1,4 +1,4 @@
-import { IconButton, Tooltip, Box } from "@mui/material";
+import { IconButton, Tooltip, Box, useTheme } from "@mui/material";
 import { useQueryParams, NumberParam, StringParam } from "use-query-params";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
@@ -7,6 +7,7 @@ import type { PrevNextProps } from "./types";
 
 export default function PrevNext({ pageInfo, sx }: PrevNextProps) {
   const { endCursor, hasNextPage, hasPreviousPage, startCursor } = pageInfo;
+  const theme = useTheme();
 
   const [, setQuery] = useQueryParams({
     limit: NumberParam,
@@ -26,7 +27,7 @@ export default function PrevNext({ pageInfo, sx }: PrevNextProps) {
         }}
       >
         <Tooltip title="Previous page">
-          <ArrowBackIcon />
+          {theme.direction === "rtl" ? <ArrowForwardIcon /> : <ArrowBackIcon />}
         </Tooltip>
       </IconButton>
       <IconButton
@@ -39,7 +40,7 @@ export default function PrevNext({ pageInfo, sx }: PrevNextProps) {
         }}
       >
         <Tooltip title="Next page">
-          <ArrowForwardIcon />
+          {theme.direction === "rtl" ? <ArrowBackIcon /> : <ArrowForwardIcon />}
         </Tooltip>
       </IconButton>
     </Box>

@@ -41,6 +41,7 @@ export const TAG = gql`
     uri
   }
 `;
+
 export const AUTHOR = gql`
   fragment Author on User {
     avatar(size: 300) {
@@ -136,13 +137,14 @@ export const NODE = gql`
       }
     }
   }
+
   fragment PageContent on Page {
     id
     databaseId
     title
     uri
     content
-    excerpt
+    # excerpt
     date
     commentStatus
     featuredImage {

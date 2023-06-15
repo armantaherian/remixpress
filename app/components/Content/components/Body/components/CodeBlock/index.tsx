@@ -36,7 +36,7 @@ export default function CodeBlock({ node }: CodeBlockProps) {
           title={
             <>
               <IntegrationInstructionsIcon
-                sx={{ mr: 1 }}
+                sx={{ marginInlineEnd: 1 }}
                 color={"action"}
                 fontSize={"small"}
               />

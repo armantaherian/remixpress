@@ -40,6 +40,7 @@ export default function Comments({
 
         return (
           <Box
+            key={commentDatabaseId}
             sx={{
               borderRight: (theme) => ({
                 xs: "none",

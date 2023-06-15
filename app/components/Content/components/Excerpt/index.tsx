@@ -40,7 +40,7 @@ export default function Excerpt({
           prefetch="intent"
           to={`${uri}#comments`}
           disabled={commentStatus == "closed"}
-          sx={{ mr: 1 }}
+          sx={{ marginInlineEnd: 1 }}
         >
           <Badge
             anchorOrigin={{

@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { useState } from "react";
-import { hydrate } from "react-dom";
+import { hydrateRoot } from 'react-dom/client';
 import { RemixBrowser } from "@remix-run/react";
 import { CacheProvider } from "@emotion/react";
 import { ThemeProvider } from "@mui/material";
@@ -12,6 +12,7 @@ import theme from "./components/Layout/theme";
 interface ClientCacheProviderProps {
   children: ReactNode;
 }
+
 function ClientCacheProvider({ children }: ClientCacheProviderProps) {
   const [cache, setCache] = useState(createEmotionCache());
 
@@ -26,12 +27,13 @@ function ClientCacheProvider({ children }: ClientCacheProviderProps) {
   );
 }
 
-hydrate(
+const container = document;
+
+hydrateRoot(container,
   <ClientCacheProvider>
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <RemixBrowser />
     </ThemeProvider>
-  </ClientCacheProvider>,
-  document
+  </ClientCacheProvider>
 );

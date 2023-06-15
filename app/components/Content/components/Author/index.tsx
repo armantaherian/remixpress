@@ -36,8 +36,8 @@ export default function Author({ data }: AuthorProps) {
           </Link>
         </Box>
 
-        <Box sx={{ pl: { xs: 0, sm: 3 }, flex: 2.2 }}>
-          <Typography variant="h4" gutterBottom>
+        <Box sx={{ paddingInlineStart: { xs: 0, sm: 3 }, flex: 2.2 }}>
+          <Typography variant="h5" gutterBottom>
             {data?.firstName} {data?.lastName}
           </Typography>
           <Typography variant="body2">{data?.description}</Typography>

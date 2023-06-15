@@ -3,18 +3,16 @@ import { red } from "@mui/material/colors";
 const theme = createTheme();
 
 const customTheme = createTheme({
+  direction: "rtl",
   typography: {
-    body1: {
-      fontFamily: "Poppins, Arial",
-    },
+    fontFamily: 'Vazirmatn, -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif',
+    body1: {},
     body2: {},
     button: {},
     caption: {
-      fontFamily: "Poppins, Arial",
       fontWeight: 400,
     },
     h1: {
-      fontFamily: "PT Serif, Arial",
       fontWeight: 700,
       [theme.breakpoints.up("xs")]: {
         fontSize: "2rem",
@@ -30,7 +28,6 @@ const customTheme = createTheme({
       },
     },
     h2: {
-      fontFamily: "PT Serif, Arial",
       fontWeight: 700,
       [theme.breakpoints.up("xs")]: {
         fontSize: "1.75rem",
@@ -46,7 +43,6 @@ const customTheme = createTheme({
       },
     },
     h3: {
-      fontFamily: "PT Serif, Arial",
       fontWeight: 700,
       [theme.breakpoints.up("xs")]: {
         fontSize: "1.65rem",
@@ -59,7 +55,6 @@ const customTheme = createTheme({
       },
     },
     h4: {
-      fontFamily: "PT Serif, Arial",
       fontWeight: 700,
       [theme.breakpoints.up("xs")]: {
         fontSize: "1.53rem",
@@ -72,12 +67,10 @@ const customTheme = createTheme({
       },
     },
     h5: {
-      fontFamily: "PT Serif, Arial",
       fontWeight: 700,
       fontSize: "1.5rem",
     },
     h6: {
-      fontFamily: "PT Serif, Arial",
       fontWeight: 700,
       fontSize: "1rem",
     },

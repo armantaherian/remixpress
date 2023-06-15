@@ -11,3 +11,4 @@ node_modules
 configs.ts
 
 api/index.js.map
+pnpm-lock.yaml

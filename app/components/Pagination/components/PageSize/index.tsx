@@ -3,6 +3,7 @@ import { useQueryParams, NumberParam, StringParam } from "use-query-params";
 
 import type { PageSizeProps } from "./types";
 
+// eslint-disable-next-line no-empty-pattern
 export default function PageSize({}: PageSizeProps) {
   const pagingOptions = [5, 10, 15, 20];
 
@@ -18,7 +19,7 @@ export default function PageSize({}: PageSizeProps) {
         <InputLabel htmlFor="grouped-native-select">Page size</InputLabel>
         <Select
           native
-          sx={{ minWidth: 100, mr: 1 }}
+          sx={{ minWidth: 100, marginInlineEnd: 1 }}
           defaultValue={5}
           size="small"
           value={query.limit}

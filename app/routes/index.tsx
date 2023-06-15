@@ -21,7 +21,7 @@ export default function BlogPosts() {
   const { nodes, pageInfo } = useLoaderData<Posts>();
 
   return (
-    <div>
+    <article>
       <Title
         sx={{
           fontSize: (theme) => ({
@@ -54,6 +54,6 @@ export default function BlogPosts() {
       <Box sx={{ p: 6, display: "flex", justifyContent: "center" }}>
         <PrevNext pageInfo={pageInfo} />
       </Box>
-    </div>
+    </article>
   );
 }

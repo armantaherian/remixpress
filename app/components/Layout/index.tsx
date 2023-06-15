@@ -10,7 +10,7 @@ import type { LayoutContextProps } from "./context";
 
 const MENU_WIDTH = 80;
 
-export default function Layout({ children }: { children: ReactNode }) {
+export default function Layout({ children }: { children: ReactNode; }) {
   const { state } = useTransition();
   const isLoading = state === "loading";
 
@@ -24,7 +24,8 @@ export default function Layout({ children }: { children: ReactNode }) {
           <Box
             sx={{
               maxHeight: "100vh",
-              overflow: layoutState?.isMenuOpen ? "hidden" : undefined,
+              overflow: layoutState.isMenuOpen ? "hidden" : undefined,
+              cursor: isLoading ? "wait" : "default",
             }}
           >
             {isXs && (
@@ -38,7 +39,9 @@ export default function Layout({ children }: { children: ReactNode }) {
                 }}
               />
             )}
+
             <Menu width={MENU_WIDTH} />
+
             <Box
               sx={{
                 width: {
@@ -52,6 +55,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                   sx={{
                     flexWrap: "wrap",
                     height: 122,
+                    justifyContent: "center"
                   }}
                 >
                   <Box sx={{ p: 1 }}>
@@ -59,6 +63,7 @@ export default function Layout({ children }: { children: ReactNode }) {
                   </Box>
                 </Toolbar>
               </AppBar>
+
               <Container maxWidth="md">
                 <Box sx={{ my: 4, mx: { xs: 1, sm: 0 } }}>{children}</Box>
               </Container>

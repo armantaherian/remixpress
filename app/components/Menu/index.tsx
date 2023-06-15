@@ -100,34 +100,42 @@ export default function Menu({ width }: MenuProps) {
               flex: 1,
             }}
           >
-            <IconButton
-              component={"a"}
-              href={`https://github.com/${settings.configs?.github}`}
-              size="small"
-            >
-              <GitHubIcon fontSize="small" />
-            </IconButton>
-            <IconButton
-              component={"a"}
-              href={`https://twitter.com/${settings.configs?.twitter}`}
-              size="small"
-            >
-              <TwitterIcon fontSize="small" />
-            </IconButton>
-            <IconButton
-              component={"a"}
-              href={`https://www.linkedin.com/in/${settings.configs?.linkedin}`}
-              size="small"
-            >
-              <LinkedInIcon fontSize="small" />
-            </IconButton>
-            <IconButton
-              component={"a"}
-              href={`mailto:${settings.configs?.email}`}
-              size="small"
-            >
-              <EmailIcon fontSize="small" />
-            </IconButton>
+            {Boolean(settings.configs?.github) && (
+              <IconButton
+                component={"a"}
+                href={`https://github.com/${settings.configs?.github}`}
+                size="small"
+              >
+                <GitHubIcon fontSize="small" />
+              </IconButton>
+            )}
+            {Boolean(settings.configs?.twitter) && (
+              <IconButton
+                component={"a"}
+                href={`https://twitter.com/${settings.configs?.twitter}`}
+                size="small"
+              >
+                <TwitterIcon fontSize="small" />
+              </IconButton>
+            )}
+            {Boolean(settings.configs?.linkedin) && (
+              <IconButton
+                component={"a"}
+                href={`https://www.linkedin.com/in/${settings.configs?.linkedin}`}
+                size="small"
+              >
+                <LinkedInIcon fontSize="small" />
+              </IconButton>
+            )}
+            {Boolean(settings.configs?.email) && (
+              <IconButton
+                component={"a"}
+                href={`mailto:${settings.configs?.email}`}
+                size="small"
+              >
+                <EmailIcon fontSize="small" />
+              </IconButton>
+            )}
           </Box>
         </Box>
         <Navigation />

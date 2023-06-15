@@ -1,9 +1,13 @@
-import { Divider, Button } from "@mui/material";
+import { Divider, Button, useTheme } from "@mui/material";
 import { Link as RmxLink } from "@remix-run/react";
-import { ArrowBackOutlined } from "@mui/icons-material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import type { BackToBlogProps } from "./types";
 
-export default function BackToBlog({}: BackToBlogProps) {
+// eslint-disable-next-line no-empty-pattern
+export default function BackToBlog({ }: BackToBlogProps) {
+  const theme = useTheme();
+
   return (
     <Divider sx={{ mb: 3 }} light variant="fullWidth" textAlign="center">
       <Button
@@ -14,8 +18,8 @@ export default function BackToBlog({}: BackToBlogProps) {
         prefetch="intent"
         sx={{ fontSize: (theme) => theme.typography.caption.fontSize }}
         to={"/"}
-        startIcon={<ArrowBackOutlined />}
       >
+        {theme.direction === "rtl" ? <ArrowForwardIcon /> : <ArrowBackIcon />}
         Back to blog
       </Button>
     </Divider>
